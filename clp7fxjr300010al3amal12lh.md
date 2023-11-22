@@ -21,6 +21,27 @@ tags: linux-commands
     
 * If file2 is already available and contains some data, then this data will be overwrite with file1 content.
     
+* Before overwriting if we want confirmation, then we should go for -i option.
+    
+    i means interactive.
+    
+    $cp -i file1.txt file2.txt
+    
+    cp: overwrite 'file2.txt'?
+    
+* If we want verbose output then we can use -v option.
+    
+    $ cp -v a.txt b.txt
+    
+    'file1.txt' -&gt; 'file2.txt'
+    
+    <div data-node-type="callout">
+    <div data-node-type="callout-emoji">💡</div>
+    <div data-node-type="callout-text">To copy multiple files content to the single file, we should not use cp command. we should use cat command.</div>
+    </div>
+    
+    $ cat file1.txt file2.txt file3.txt &gt; file4.txt
+    
 
 **2) To Copy File to Directory:**
 
@@ -90,7 +111,17 @@ Both moving and renaming activities can be performed by using single command: (m
 
 * $mv dir1 dir2
     
-* If dir2 is already available then dir1 will be moved to dir2. If dir1 is not already available then dir1 will be renamed to dir2.
+* If dir1 is not already available then dir1 will be renamed to dir2.
+    
+* If dir2 is already available then dir1 will be moved to dir2.
+    
+* In the case of overwriting, if we want confirmation alert then we can use -i option
+    
+    with mv command.
+    
+    $ mv -i a.txt d.txt dir1
+    
+    mv: overwrite 'dir1/a.txt'?
     
 
 ---
@@ -210,7 +241,6 @@ $cat file1.txt &gt;&gt; file2.txt
 
 * It will display top 10 lines of file1.txt.
     
-
 * 10 is the default value of number of lines.
     
     <mark>$head -n 30 file1.txt (Or) $head -30 file1.txt</mark>
@@ -277,11 +307,9 @@ We can use more command to view file content page by page.
 
 ### 7\. less Command:
 
-* By using more command, we can view file content page by page only in forward
+* By using more command, we can view file content page by page only in the forward direction.
     
-    direction.
-    
-* If we want to move either in forward direction or in backward direction then we
+* If we want to move either in a forward direction or in a backward direction then we
     
     should go for less command
     
